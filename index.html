@@ -70,7 +70,8 @@
             var randomText = texts[Math.floor(Math.random() * texts.length)];
 
             noButton.innerHTML = randomText;
-            // Do not call the displayResultImage() function here
+            var resultImage = document.getElementById("result-image");
+            resultImage.style.display = "none"; // Hide the result image when "NO" button is pressed
         }
 
         function displayResultImage() {
