@@ -24,6 +24,7 @@
             border: none;
             cursor: pointer;
             margin-right: 10px;
+            transition: font-size 0.3s ease-in-out;
         }
 
         #no-button {
@@ -33,13 +34,33 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
+            transition: font-size 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
     <img id="heart-image" src="heart-image.jpg" alt="Heart Image">
     <h2>Will you be my valentine?</h2>
-    <button id="yes-button">YES</button>
-    <button id="no-button">NO</button>
+    <button id="yes-button" onclick="increaseSize()">YES</button>
+    <button id="no-button" onclick="changeNoButtonText()">NO</button>
+
+    <script>
+        function increaseSize() {
+            var yesButton = document.getElementById("yes-button");
+            var currentSize = window.getComputedStyle(yesButton, null).getPropertyValue('font-size');
+            var newSize = (parseFloat(currentSize) + 2) + 'px';
+            yesButton.style.fontSize = newSize;
+        }
+
+        function changeNoButtonText() {
+            var noButton = document.getElementById("no-button");
+            var texts = ["How could you", "You're making me sad", "I'm a sad"];
+            var randomText = texts[Math.floor(Math.random() * texts.length)];
+
+            noButton.innerHTML = randomText;
+
+            increaseSize(); // Call the function to increase the size when the "NO" button is pressed
+        }
+    </script>
 </body>
 </html>
