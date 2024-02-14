@@ -37,12 +37,7 @@
             transition: font-size 0.3s ease-in-out;
         }
 
-        #result-image {
-            display: none;
-            width: 200px;
-            height: 200px;
-            margin: 20px auto; /* Center the image horizontally */
-        }
+        #result-image,
         #result-image-2 {
             display: none;
             width: 200px;
@@ -54,7 +49,7 @@
 <body>
     <img id="heart-image" src="heart-image.jpg" alt="Heart Image">
     <h2>Will you be my valentine?</h2>
-    <button id="yes-button" onclick="displayResultImage()">YES</button>
+    <button id="yes-button" onclick="displayResultImages()">YES</button>
     <button id="no-button" onclick="changeNoButtonText()">NO</button>
     <img id="result-image" src="" alt="Result Image">
     <img id="result-image-2" src="" alt="Result Image 2">
@@ -79,12 +74,13 @@
             increaseSize();
         }
 
-        function displayResultImage() {
+        function displayResultImages() {
             var resultImage = document.getElementById("result-image");
             resultImage.src = "result-image.jpg"; // Replace with the actual path or URL of the result image
             resultImage.style.display = "block";
+
             var resultImage2 = document.getElementById("result-image-2");
-            resultImage2.src = "me.jpg"; // Replace with the actual path or URL of the result image
+            resultImage2.src = "result-image-2.jpg"; // Replace with the actual path or URL of the second result image
             resultImage2.style.display = "block";
         }
     </script>
