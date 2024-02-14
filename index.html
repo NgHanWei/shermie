@@ -36,6 +36,13 @@
             cursor: pointer;
             transition: font-size 0.3s ease-in-out;
         }
+
+        #result-image {
+            display: none;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -43,13 +50,18 @@
     <h2>Will you be my valentine?</h2>
     <button id="yes-button" onclick="increaseSize()">YES</button>
     <button id="no-button" onclick="changeNoButtonText()">NO</button>
+    <img id="result-image" src="" alt="Result Image">
 
     <script>
+        var sizeIncrease = 2; // Initial size increase
+
         function increaseSize() {
             var yesButton = document.getElementById("yes-button");
             var currentSize = window.getComputedStyle(yesButton, null).getPropertyValue('font-size');
-            var newSize = (parseFloat(currentSize) + 2) + 'px';
+            var newSize = (parseFloat(currentSize) + sizeIncrease) + 'px';
             yesButton.style.fontSize = newSize;
+            sizeIncrease += 2; // Increase size increase for the next time
+            displayResultImage();
         }
 
         function changeNoButtonText() {
@@ -58,8 +70,13 @@
             var randomText = texts[Math.floor(Math.random() * texts.length)];
 
             noButton.innerHTML = randomText;
-
             increaseSize(); // Call the function to increase the size when the "NO" button is pressed
+        }
+
+        function displayResultImage() {
+            var resultImage = document.getElementById("result-image");
+            resultImage.src = "result-image.jpg"; // Replace with the actual path or URL of the result image
+            resultImage.style.display = "block";
         }
     </script>
 </body>
