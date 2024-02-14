@@ -43,6 +43,12 @@
             height: 200px;
             margin: 20px auto; /* Center the image horizontally */
         }
+        #result-image-2 {
+            display: none;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto; /* Center the image horizontally */
+        }
     </style>
 </head>
 <body>
@@ -51,6 +57,7 @@
     <button id="yes-button" onclick="displayResultImage()">YES</button>
     <button id="no-button" onclick="changeNoButtonText()">NO</button>
     <img id="result-image" src="" alt="Result Image">
+    <img id="result-image-2" src="" alt="Result Image 2">
 
     <script>
         var sizeIncrease = 2; // Initial size increase
@@ -76,6 +83,9 @@
             var resultImage = document.getElementById("result-image");
             resultImage.src = "result-image.jpg"; // Replace with the actual path or URL of the result image
             resultImage.style.display = "block";
+            var resultImage2 = document.getElementById("result-image-2");
+            resultImage2.src = "me.jpg"; // Replace with the actual path or URL of the result image
+            resultImage2.style.display = "block";
         }
     </script>
 </body>
