@@ -41,7 +41,7 @@
             display: none;
             width: 200px;
             height: 200px;
-            margin-top: 20px;
+            margin: 20px auto; /* Center the image horizontally */
         }
     </style>
 </head>
@@ -70,7 +70,7 @@
             var randomText = texts[Math.floor(Math.random() * texts.length)];
 
             noButton.innerHTML = randomText;
-            increaseSize(); // Call the function to increase the size when the "NO" button is pressed
+            // Do not call the displayResultImage() function here
         }
 
         function displayResultImage() {
