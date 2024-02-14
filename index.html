@@ -48,7 +48,7 @@
 <body>
     <img id="heart-image" src="heart-image.jpg" alt="Heart Image">
     <h2>Will you be my valentine?</h2>
-    <button id="yes-button" onclick="increaseSize()">YES</button>
+    <button id="yes-button" onclick="displayResultImage()">YES</button>
     <button id="no-button" onclick="changeNoButtonText()">NO</button>
     <img id="result-image" src="" alt="Result Image">
 
@@ -61,7 +61,6 @@
             var newSize = (parseFloat(currentSize) + sizeIncrease) + 'px';
             yesButton.style.fontSize = newSize;
             sizeIncrease += 2; // Increase size increase for the next time
-            displayResultImage();
         }
 
         function changeNoButtonText() {
